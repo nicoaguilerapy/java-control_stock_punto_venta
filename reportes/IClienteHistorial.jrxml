@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9246f6b2-4ce5-4b67-8cd2-0b31ac8cc314">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="cin" class="java.lang.String"/>
+	<parameter name="nombre" class="java.lang.String"/>
+	<parameter name="sql" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[$P!{sql}]]>
+	</queryString>
+	<field name="id" class="java.lang.String"/>
+	<field name="facturanum" class="java.lang.String"/>
+	<field name="fecha" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="194" height="45" uuid="e6c0805a-0cba-409a-9207-b325986163c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Javanese Text" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Historial Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="25" width="74" height="20" uuid="6d175593-ce20-4cc2-b257-d58c909fab9e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="0" width="74" height="20" uuid="3eb2eecf-e28b-42ca-805a-31a5c7be9482"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[CIN/RUC:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="45" width="555" height="1" uuid="bbda6a76-34c3-45f6-becf-87bb1357fad9"/>
+			</line>
+			<textField>
+				<reportElement x="288" y="0" width="143" height="20" uuid="8c1a980f-8d7f-4edb-878b-d8ac1fc6a03a"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="290" y="25" width="265" height="20" uuid="7c81e4b5-78b9-464a-98ef-ad5f88268d02"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="32" height="20" backcolor="#CCCCCC" uuid="952d074b-9311-4ffb-bb82-9aeaeb48dff2"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="43" y="0" width="96" height="20" backcolor="#CCCCCC" uuid="96978f1b-23aa-492d-9d39-4e18f440d215"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="152" y="0" width="100" height="20" backcolor="#CCCCCC" uuid="42658b9f-045c-4920-b169-057a06c51df1"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="263" y="0" width="233" height="20" backcolor="#CCCCCC" uuid="e600d666-550f-4ff4-9f7a-def0be63d429"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="498" y="0" width="57" height="20" backcolor="#CCCCCC" uuid="43159479-8098-472d-af72-4b48a88a8421"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="32" height="20" uuid="ac9e56c3-0c4c-465e-ac7f-d2d0f7f2f4cc"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="43" y="0" width="96" height="20" uuid="1fd1fdc1-e4b3-4596-ad70-5a98f5e76a84"/>
+				<textFieldExpression><![CDATA[$F{facturanum}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="100" height="20" uuid="3d2f7f1c-54cf-4163-a8a6-fe2e7e4cc57d"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="263" y="0" width="233" height="20" uuid="1fa09838-393f-4ff3-a69f-d8087205b0b6"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="498" y="0" width="57" height="20" uuid="a58ad629-57af-4b21-9c8e-871bc12821f4"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<textField>
+				<reportElement x="431" y="30" width="80" height="20" uuid="9f2ad812-3259-47a4-871c-af90f0af8e25"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="511" y="30" width="40" height="20" uuid="0b85304c-0c69-4d00-938f-47d516e612c4"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
